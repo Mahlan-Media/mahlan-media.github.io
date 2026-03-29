@@ -142,14 +142,6 @@
       opacity: 0.98;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 75% 20%, rgba(205, 179, 91, 0.18), transparent 20%);
-      pointer-events: none;
-    }
-
     .hero-inner {
       position: relative;
       z-index: 1;
@@ -179,7 +171,7 @@
     }
 
     h1 {
-      max-width: 10ch;
+      max-width: 12ch;
       font-size: clamp(3rem, 8vw, 6rem);
       color: #fff7de;
     }
@@ -194,12 +186,8 @@
       color: #fff1c4;
     }
 
-    .hero-copy {
-      max-width: 710px;
-    }
-
     .hero-copy p {
-      max-width: 58ch;
+      max-width: 60ch;
       font-size: 1.08rem;
       color: #f0e3b9;
       margin: 0 0 1.6rem;
@@ -237,13 +225,9 @@
       color: #e7d9a5;
     }
 
-    .grid {
-      display: grid;
-      gap: 1rem;
-    }
+    .grid { display: grid; gap: 1rem; }
 
     .services-grid,
-    .proof-grid,
     .page-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -278,8 +262,6 @@
       color: #eddca7;
     }
 
-    .checklist li + li { margin-top: 0.6rem; }
-
     .cta-band {
       text-align: center;
       padding: 2.5rem;
@@ -300,29 +282,9 @@
 
     @media (max-width: 980px) {
       .services-grid,
-      .proof-grid,
       .page-grid,
       .split-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-inner {
-        padding: 4rem 0;
-      }
-
-      .nav-links {
-        width: 100%;
       }
     }
   </style>
@@ -335,11 +297,9 @@
         <div class="brand-sub">A Mahlan Media Company</div>
       </a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
         <a href="mailto:Mahlan@mahlanmedia.com" class="btn btn-primary">Contact Now</a>
       </div>
     </div>
@@ -348,21 +308,21 @@
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
-        <div class="eyebrow">Drone Video & Photography Across Indiana</div>
-        <h1>Show the full scale of your project.</h1>
+        <div class="eyebrow">Aerial Video & Photography</div>
+        <h1>Make your business look as strong as it actually is.</h1>
         <p>
-          Indiana Drone Services creates professional aerial photo and video content for construction companies, real estate listings, tourism campaigns, commercial brands, and events that need a sharper visual presence.
+          Indiana Drone Services helps businesses, property owners, and organizations across Indiana present themselves with clean, professional aerial media. Whether you're marketing a property, documenting a project, or building a brand, strong visuals make the difference.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:Mahlan@mahlanmedia.com">Contact Now</a>
           <a class="btn btn-secondary" href="portfolio.html">View Portfolio</a>
         </div>
         <div class="hero-meta">
-          <span>FAA Part 107 Certified</span>
+          <span>FAA Certified</span>
+          <span>•</span>
+          <span>Fast Turnaround</span>
           <span>•</span>
           <span>Indiana Based</span>
-          <span>•</span>
-          <span>Fast Turnaround Available</span>
         </div>
       </div>
     </div>
@@ -372,29 +332,29 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">What We Do</div>
-          <h2>Aerial content built for businesses that need more than average.</h2>
+          <div class="eyebrow">Services</div>
+          <h2>Built for real-world business needs</h2>
         </div>
         <p>
-          From recurring site updates to polished marketing visuals, every shoot is designed to create assets that look professional, communicate scale, and hold attention.
+          Every project is approached with a focus on clarity, quality, and usefulness. The goal is simple: deliver media that looks great and actually helps you communicate, market, or document what matters.
         </p>
       </div>
 
       <div class="grid services-grid">
         <article class="card">
           <span class="feature-label">Construction</span>
-          <h3>Progress updates that actually look polished</h3>
-          <p>Document development, track progress over time, and create client-facing visuals with clean aerial footage of your site.</p>
+          <h3>Progress documentation</h3>
+          <p>Track and present job site progress with clean, consistent aerial visuals that are easy to share with teams and clients.</p>
         </article>
         <article class="card">
           <span class="feature-label">Real Estate</span>
-          <h3>Property media that adds context and scale</h3>
-          <p>Show homes, land, buildings, and surrounding areas in a way ground-level photography cannot.</p>
+          <h3>Property marketing</h3>
+          <p>Show full property layouts, surrounding areas, and key features with professional aerial photos and video.</p>
         </article>
         <article class="card">
-          <span class="feature-label">Commercial</span>
-          <h3>Brand visuals that feel premium</h3>
-          <p>Create content for websites, ads, social media, presentations, and campaigns with a stronger visual standard.</p>
+          <span class="feature-label">Business & Marketing</span>
+          <h3>Brand visuals</h3>
+          <p>Create strong visual content for websites, social media, and campaigns that reflects the quality of your business.</p>
         </article>
       </div>
     </div>
@@ -403,19 +363,19 @@
   <section>
     <div class="container grid split-grid">
       <article class="card">
-        <div class="eyebrow">Why Indiana Drone Services</div>
-        <h2>Professional aerial media with the creative backing of Mahlan Media.</h2>
+        <div class="eyebrow">About</div>
+        <h2>Focused on quality. Backed by experience.</h2>
         <p>
-          Indiana Drone Services focuses on aerial work, while Mahlan Media serves as the umbrella company for broader video, photography, and branded content services. That means clients get a specialized drone-focused brand with the flexibility of a larger creative service offering.
+          Indiana Drone Services operates under Mahlan Media, a creative media company specializing in video production, photography, and digital content. This structure allows for focused drone services while still offering the flexibility of full-scale media support when needed.
         </p>
       </article>
       <article class="card">
-        <div class="eyebrow">What Clients Need</div>
+        <div class="eyebrow">What to Expect</div>
         <ul class="checklist">
-          <li>Clear communication and reliable scheduling</li>
-          <li>Drone footage that feels smooth and intentional</li>
-          <li>Strong visuals for marketing and updates</li>
-          <li>A simple path to ask for a quote</li>
+          <li>Clear communication from start to finish</li>
+          <li>Reliable scheduling and delivery</li>
+          <li>Clean, stabilized, professional footage</li>
+          <li>Simple and direct booking process</li>
         </ul>
       </article>
     </div>
@@ -425,25 +385,25 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Explore More</div>
-          <h2>Built to expand into a full site</h2>
+          <div class="eyebrow">Next Steps</div>
+          <h2>Explore more</h2>
         </div>
         <p>
-          The home page creates the first impression. The next pages give visitors proof, context, and a direct way to reach out.
+          View recent work, learn more about the company, or reach out directly to start a project.
         </p>
       </div>
       <div class="grid page-grid">
         <article class="card">
           <h3>Portfolio</h3>
-          <p>Show finished work across drone video, real estate, construction, tourism, and events.</p>
+          <p>Examples of drone work across construction, real estate, events, and business content.</p>
         </article>
         <article class="card">
           <h3>About</h3>
-          <p>Share the story behind the company, your certifications, and the standard clients can expect.</p>
+          <p>Background, experience, and what sets this service apart.</p>
         </article>
         <article class="card">
           <h3>Services</h3>
-          <p>Break down your offerings clearly so visitors understand exactly what they can book.</p>
+          <p>Detailed breakdown of available offerings and use cases.</p>
         </article>
       </div>
     </div>
@@ -452,10 +412,10 @@
   <section>
     <div class="container">
       <div class="card cta-band">
-        <div class="eyebrow">Ready to Talk</div>
-        <h2>Need professional drone content in Indiana?</h2>
+        <div class="eyebrow">Contact</div>
+        <h2>Start a project</h2>
         <p style="max-width: 56ch; margin: 0 auto 1.25rem; color: #eddca7;">
-          Reach out to discuss your project, timeline, and location. Whether it is a one-time shoot or recurring content, Indiana Drone Services is ready to help.
+          Send a message with your project details, timeline, and location. You’ll get a clear response and next steps.
         </p>
         <a class="btn btn-primary" href="mailto:Mahlan@mahlanmedia.com">Mahlan@mahlanmedia.com</a>
       </div>
@@ -465,7 +425,7 @@
   <footer class="footer">
     <div class="container footer-wrap">
       <div>© 2026 Indiana Drone Services</div>
-      <div>A Mahlan Media Company • Fort Wayne, Indiana</div>
+      <div>A Mahlan Media Company • Indiana</div>
     </div>
   </footer>
 </body>
