@@ -3,364 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Indiana Drone Services | Aerial Video & Photography Across Indiana</title>
-  <meta name="description" content="Indiana Drone Services delivers cinematic aerial video and photography for construction, real estate, tourism, commercial marketing, and events across Indiana. A Mahlan Media company." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Indiana Drone Services" />
-  <meta property="og:description" content="Professional drone video and photography across Indiana for brands, properties, projects, and events." />
+
+  <title>Mahlan Media LLC | Drone Services in Indiana</title>
+  <meta name="description" content="Mahlan Media LLC provides professional drone services in Indiana including aerial photography, videography, real estate media, and construction progress filming." />
+  <meta name="keywords" content="Indiana drone services, drone photography Indiana, aerial videography Indiana, real estate drone footage Indiana, construction drone progress, Fort Wayne drone services" />
+
+  <meta name="author" content="Mahlan Media LLC" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mahlan Media LLC | Drone Services in Indiana" />
+  <meta property="og:description" content="Professional drone photography and videography across Indiana." />
   <meta property="og:type" content="website" />
+
   <style>
-    :root {
-      --bg: #000000;
-      --bg-soft: #090909;
-      --panel: #0d0d0d;
-      --text: #f7f1dd;
-      --muted: #dccb8f;
-      --gold: #cdb35b;
-      --gold-deep: #b89d45;
-      --gold-soft: rgba(205, 179, 91, 0.12);
-      --border: rgba(205, 179, 91, 0.24);
-      --max: 1180px;
-      --radius: 28px;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
       margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top center, rgba(205, 179, 91, 0.12), transparent 24%),
-        linear-gradient(180deg, #000000 0%, #050505 55%, #000000 100%);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    a { color: inherit; text-decoration: none; }
-    .container {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
+    body, html {
+      height: 100%;
+      background: #000;
+      color: #fff;
     }
 
-    .nav {
-      position: sticky;
+    /* Background video */
+    .video-container {
+      position: fixed;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-      background: rgba(0, 0, 0, 0.82);
-      border-bottom: 1px solid rgba(205, 179, 91, 0.14);
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
     }
 
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
     }
 
-    .brand-wrap {
+    /* Overlay content */
+    .content {
+      position: relative;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .brand {
-      font-family: "Lulo Clean One Bold", "Avenir Next", "Montserrat", Arial, sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #fff5cc;
-    }
-
-    .brand-sub {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.15rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: #fff3c4; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
       justify-content: center;
-      padding: 0.95rem 1.35rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-weight: 700;
-      transition: 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(205, 179, 91, 0.16);
-    }
-
-    .btn-primary {
-      background: linear-gradient(180deg, rgba(205, 179, 91, 0.32), rgba(205, 179, 91, 0.16));
-      color: #fff8dd;
-      border-color: rgba(205, 179, 91, 0.38);
-    }
-
-    .btn-secondary {
-      background: rgba(205, 179, 91, 0.06);
-      color: #f3e7bd;
-    }
-
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 84px);
-      display: flex;
       align-items: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.5) 100%),
-        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.82)),
-        url('https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-      opacity: 0.98;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-      padding: 6rem 0;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(205, 179, 91, 0.1);
-      border: 1px solid rgba(205, 179, 91, 0.2);
-      color: var(--gold);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 1rem;
-      line-height: 1.06;
-      letter-spacing: -0.03em;
+      text-align: center;
+      padding: 20px;
     }
 
     h1 {
-      max-width: 12ch;
-      font-size: clamp(3rem, 8vw, 6rem);
-      color: #fff7de;
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
 
     h2 {
-      font-size: clamp(1.8rem, 3vw, 2.9rem);
-      color: #fff1c4;
+      font-weight: 300;
+      margin-bottom: 20px;
+      max-width: 700px;
     }
 
-    h3 {
-      font-size: 1.22rem;
-      color: #fff1c4;
+    .badge {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
-    .hero-copy p {
-      max-width: 60ch;
-      font-size: 1.08rem;
-      color: #f0e3b9;
-      margin: 0 0 1.6rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.3rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      color: #e5d59b;
-      font-size: 0.95rem;
-    }
-
-    section { padding: 4.5rem 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.6rem;
-    }
-
-    .section-head p {
-      max-width: 58ch;
-      margin: 0;
-      color: #e7d9a5;
-    }
-
-    .grid { display: grid; gap: 1rem; }
-
-    .services-grid,
-    .page-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .split-grid {
-      grid-template-columns: 1.15fr 0.85fr;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(205, 179, 91, 0.08), rgba(255, 255, 255, 0.02));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.4rem;
-      box-shadow: var(--shadow);
-    }
-
-    .card p { margin: 0; color: #eddca7; }
-
-    .feature-label {
+    .cta {
+      margin-top: 25px;
       display: inline-block;
-      margin-bottom: 0.8rem;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
+      padding: 12px 20px;
+      background: #ffffff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
     }
 
-    .checklist {
-      margin: 0;
-      padding-left: 1.1rem;
-      color: #eddca7;
+    .cta:hover {
+      background: #ddd;
     }
 
-    .cta-band {
-      text-align: center;
-      padding: 2.5rem;
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.85rem;
+      opacity: 0.8;
     }
 
-    .footer {
-      border-top: 1px solid rgba(205, 179, 91, 0.16);
-      padding: 2rem 0 3rem;
-      color: #dccb8a;
+    footer a {
+      color: #fff;
+      text-decoration: underline;
     }
-
-    .footer-wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 980px) {
-      .services-grid,
-      .page-grid,
-      .split-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  @keyframes fadeIn { from { opacity:0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
-
-    .glass {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-</style>
+  </style>
 </head>
+
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-wrap">
-        <div class="brand">Indiana Drone Services</div>
-        <div class="brand-sub">A Mahlan Media Company</div>
-      </a>
-      <div class="nav-links">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="mailto:Mahlan@mahlanmedia.com" class="btn btn-primary">Contact Now</a>
-      </div>
+
+  <!-- Background Video -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="your-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Mahlan Media LLC</h1>
+    <h2>Professional drone services across Indiana including aerial photography, videography, real estate media, and construction progress documentation.</h2>
+
+    <div class="badge">
+      Serving Indiana • Based in Fort Wayne • FAA Licensed Drone Operator
     </div>
-  </nav>
 
-  <header class="hero">
-    <div class="hero-inner" style="display:grid; grid-template-columns: 1.1fr 0.9fr; gap:2rem; align-items:center;">
-      <div class="hero-copy">
-        <div class="eyebrow">Aerial Video & Photography</div>
-        <h1>Make your business look as strong as it actually is.</h1>
-        <p>
-          Indiana Drone Services helps businesses, property owners, and organizations across Indiana present themselves with clean, professional aerial media. Whether you're marketing a property, documenting a project, or building a brand, strong visuals make the difference.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:Mahlan@mahlanmedia.com">Contact Now</a>
-          <a class="btn btn-secondary" href="portfolio.html">View Portfolio</a>
-        </div>
-        <div class="hero-meta">
-          <span>FAA Certified</span>
-          <span>•</span>
-          <span>Fast Turnaround</span>
-          <span>•</span>
-          <span>Indiana Based</span>
-        </div>
-      </div>
+    <a class="cta" href="https://mahlanmedia.com">Visit Main Site</a>
 
-      <div style="position:relative; border-radius:28px; overflow:hidden; border:1px solid var(--border); background:rgba(255,255,255,0.05); backdrop-filter:blur(16px); opacity:0; animation:fadeIn 1.2s ease forwards; animation-delay:0.3s;">
-        <iframe width="100%" height="100%" style="aspect-ratio:16/9; border:0;" src="https://www.youtube.com/embed/zH39I0GT5Ns" title="Drone Video" allowfullscreen></iframe>
-      </div>
-    </div>
-  </header>
+    <footer>
+      © Mahlan Media LLC | This site is operated under Mahlan Media LLC and is not affiliated with Indiana Drone Services LLC.
+    </footer>
+  </div>
 
-  
-
-  <section>
-    <div class="container">
-      <div class="card cta-band">
-        <div class="eyebrow">Contact</div>
-        <h2>Start a project</h2>
-        <p style="max-width: 56ch; margin: 0 auto 1.25rem; color: #eddca7;">
-          Send a message with your project details, timeline, and location. You’ll get a clear response and next steps.
-        </p>
-        <a class="btn btn-primary" href="mailto:Mahlan@mahlanmedia.com">Mahlan@mahlanmedia.com</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-wrap">
-      <div>© 2026 Indiana Drone Services</div>
-      <div>A Mahlan Media Company • Indiana</div>
-    </div>
-  </footer>
 </body>
 </html>
