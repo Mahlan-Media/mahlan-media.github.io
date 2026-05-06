@@ -6,9 +6,13 @@
 
   <title>Mahlan Media LLC | Drone Services in Indiana</title>
 
-  <meta name="description" content="Mahlan Media LLC provides professional drone services in Indiana including aerial photography, videography, real estate media, and construction progress documentation." />
+  <meta name="description" content="Mahlan Media LLC provides professional drone services in Indiana including aerial photography, videography, real estate media, and construction documentation." />
   <meta name="keywords" content="Indiana drone services, drone photography Indiana, aerial videography Indiana, Fort Wayne drone services, real estate drone media Indiana" />
 
+  <!-- Favicon (replace file in repo as favicon.ico or png) -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
   <style>
@@ -16,7 +20,7 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Lato',sans-serif;
+      font-family:'Lulo Clean','Lato',sans-serif;
     }
 
     body{
@@ -25,20 +29,27 @@
       overflow-x:hidden;
     }
 
-    .bg-glow{
+    /* animated light blooms */
+    .bloom{
       position:fixed;
-      width:600px;
-      height:600px;
+      width:500px;
+      height:500px;
       border-radius:50%;
       filter:blur(140px);
       opacity:0.25;
       z-index:0;
+      animation:float 10s ease-in-out infinite;
     }
 
-    .g1{background:#c0a44d; top:-200px; left:-200px;}
-    .g2{background:#fff; bottom:-250px; right:-250px; opacity:0.07;}
+    .b1{background:#c0a44d; top:-150px; left:-150px;}
+    .b2{background:#ffffff; bottom:-200px; right:-200px; animation-delay:2s; opacity:0.08;}
+    .b3{background:#c0a44d; top:40%; left:60%; animation-delay:4s; opacity:0.12;}
 
-    /* layout */
+    @keyframes float{
+      0%,100%{transform:translateY(0) scale(1);}
+      50%{transform:translateY(40px) scale(1.1);}
+    }
+
     .container{
       position:relative;
       z-index:2;
@@ -59,12 +70,10 @@
       box-shadow:0 20px 60px rgba(0,0,0,0.5);
     }
 
-    /* text */
     .content{
       flex:1;
       min-width:320px;
       padding:40px;
-      animation:fadeUp 1s ease;
     }
 
     h1{
@@ -86,7 +95,6 @@
       font-size:0.9rem;
     }
 
-    /* buttons */
     .buttons{
       margin-top:30px;
       display:flex;
@@ -95,7 +103,7 @@
     }
 
     .btn{
-      padding:16px 26px;
+      padding:18px 28px;
       border-radius:14px;
       font-weight:700;
       text-decoration:none;
@@ -105,10 +113,10 @@
     .primary{
       background:linear-gradient(135deg,#c0a44d,#e2c76a);
       color:#000;
-      font-size:1.05rem;
+      font-size:1.1rem;
     }
 
-    .primary:hover{transform:translateY(-2px);}
+    .primary:hover{transform:translateY(-3px);}
 
     .secondary{
       border:1px solid #c0a44d;
@@ -121,8 +129,8 @@
       color:#000;
     }
 
-    /* image */
-    .image-card{
+    /* video */
+    .video-card{
       flex:1;
       min-width:320px;
       height:520px;
@@ -130,19 +138,12 @@
       position:relative;
     }
 
-    .image-card img{
+    iframe{
       width:100%;
       height:100%;
-      object-fit:cover;
+      border:0;
     }
 
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
-    }
-
-    /* sections */
     section{
       padding:80px 20px;
       position:relative;
@@ -163,7 +164,6 @@
       line-height:1.7;
     }
 
-    /* stats */
     .stats{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -183,7 +183,6 @@
       color:#c0a44d;
     }
 
-    /* portfolio */
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -198,64 +197,25 @@
       object-fit:cover;
     }
 
-    /* form */
-    form{
-      max-width:600px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      margin-top:30px;
-    }
-
-    input,textarea{
-      padding:12px;
-      border-radius:10px;
-      border:1px solid #333;
-      background:rgba(255,255,255,0.05);
-      color:#fff;
-    }
-
-    button{
-      padding:14px;
-      background:#c0a44d;
-      border:none;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-    }
-
-    /* map */
-    iframe{
-      width:100%;
-      height:300px;
-      border:0;
-      border-radius:16px;
-      margin-top:20px;
-    }
-
     footer{
       text-align:center;
       padding:30px;
       color:#777;
       border-top:1px solid #111;
+      position:relative;
+      z-index:2;
     }
 
     footer span{color:#c0a44d;}
-
-    @keyframes fadeUp{
-      from{opacity:0; transform:translateY(20px);}
-      to{opacity:1; transform:translateY(0);}
-    }
   </style>
 </head>
 
 <body>
 
-<div class="bg-glow g1"></div>
-<div class="bg-glow g2"></div>
+<div class="bloom b1"></div>
+<div class="bloom b2"></div>
+<div class="bloom b3"></div>
 
-<!-- HERO -->
 <div class="container">
 
   <div class="content glass">
@@ -269,49 +229,31 @@
     </div>
   </div>
 
-  <div class="image-card glass">
-    <img src="hero.jpg" />
-    <div class="overlay"></div>
+  <div class="video-card glass">
+    <iframe src="https://www.youtube.com/embed/zH39I0GT5Ns?autoplay=1&mute=1&loop=1&playlist=zH39I0GT5Ns&controls=0&playsinline=1" allow="autoplay"></iframe>
   </div>
 
 </div>
 
-<!-- ABOUT -->
 <section>
   <h3>Drone Services in Indiana</h3>
-  <p>We provide high-end aerial imaging for real estate, construction, events, and commercial projects across Indiana.</p>
+  <p>High-end aerial imaging for real estate, construction, events, and commercial projects across Indiana.</p>
 
   <div class="stats">
-    <div class="stat"><h4>100+</h4><p>Projects Completed</p></div>
-    <div class="stat"><h4>FAA</h4><p>Licensed Operator</p></div>
-    <div class="stat"><h4>24h</h4><p>Turnaround Options</p></div>
+    <div class="stat"><h4>100+</h4><p>Projects</p></div>
+    <div class="stat"><h4>FAA</h4><p>Licensed</p></div>
+    <div class="stat"><h4>24h</h4><p>Delivery Options</p></div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section>
   <h3>Recent Work</h3>
   <div class="grid">
-    <img src="p1.jpg" />
-    <img src="p2.jpg" />
-    <img src="p3.jpg" />
-    <img src="p4.jpg" />
+    <img src="work1.jpg" />
+    <img src="work2.jpg" />
+    <img src="work3.jpg" />
+    <img src="work4.jpg" />
   </div>
-</section>
-
-<!-- CONTACT -->
-<section>
-  <h3>Contact / Booking</h3>
-  <p>Request a quote or book a drone session directly.</p>
-
-  <form action="mailto:Mahlan@mahlanmedia.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <textarea name="message" rows="5" placeholder="Project details..."></textarea>
-    <button type="submit">Send Request</button>
-  </form>
-
-  <iframe src="https://www.google.com/maps?q=Fort+Wayne+Indiana&output=embed"></iframe>
 </section>
 
 <footer>
